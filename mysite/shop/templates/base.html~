@@ -1,0 +1,46 @@
+
+<html>
+
+<head>
+<link rel='stylesheet' type='text/css' href='/static/css/home.css'>
+</head>
+
+<body>
+<div class="titles"> 
+
+	<div class='userPass'>
+	{% if user.is_authenticated %}
+	<a href='/accounts/logout'>logout</a>
+	{% if bob == True %}	
+	<a href='/shop/add'>Add Item</a>
+	{%  endif %}
+	<img src='/static/images/Scart.png' height= 50px>
+	{% else %}
+	<a href='/accounts/login'>login HERE</a>
+	{% endif %}
+	
+	</div>
+	<center> Generic Shopping Site</center>
+</div>
+<center><div class='searchBar'>
+<form action="#" ><input type=text></input><input type=submit value='search'></input></form>
+</div></center>
+<div class="page">
+<div class='menu'>
+	<ul>
+		<a href="/shop/"><li>home</li></a>
+		<a><li>catagories</li></a>
+		<a><li>price range</li></a>
+		<a><li>newest</li></a>
+		
+	</ul>
+</div>
+<div class='content'>
+{% block page %}
+
+{% endblock %}
+</div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,2 @@
+[19/Aug/2014 18:00:20] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[19/Aug/2014 18:00:20] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()

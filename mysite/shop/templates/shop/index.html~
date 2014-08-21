@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block page %}
+<ul>
+{% for i in items %}
+<a class=linkless href='/shop/item/{{ i.id }}'>
+<div class= saleItem>
+	<div class=sipic>
+	{% for pic in i.pic_set.all %}
+	<img src='{{pic.picfile.url}}'>
+	{% endfor %}
+	</div>
+	<div class=sicon>
+	<ul>
+		<li><center>{{ i.name }}</center></li>
+		<li> {{ i.desc }} </li>
+		<li> {{ i.price }} </li>
+	</ul>
+	</div>
+</div></a>
+<br>
+{% endfor %}
+</ul>
+{% endblock %}

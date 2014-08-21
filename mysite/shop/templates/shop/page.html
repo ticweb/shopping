@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block page %}
+
+<h1><center>{{ i.name }}</center></h1>
+
+{%  if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<div class= sellingItem>
+	<div class=picse>
+	<img src='{{ pic.picfile.url }}'>
+	</div>
+	<div class=conse>
+	<ul>
+		<li> {{ i.desc }} </li>
+		<li> {{ i.price }} </li>
+		<div class='addToCart'>
+			<ul>
+				<li><u>Add to Cart</u></li>
+				<li><img src="/static/images/Scart.png"></li>
+			</ul>
+		</div>
+	</ul>
+	</div>
+</div>
+
+{% endblock %}
