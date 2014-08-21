@@ -1,12 +1,21 @@
 from django.db import models
 from django.forms import ModelForm
 from django import forms
+from django.contrib.auth.models import User
+
+
+class Cart(models.Model):
+	user = models.ForeignKey(User,editable=False)
+	def __unicode__(self):
+		return str(self.user.username) + "'s cart"
+
 
 class Item(models.Model):
 	name = models.CharField(max_length=200)
 	desc = models.CharField(max_length=5000)
 	price = models.DecimalField(max_digits=8, decimal_places=2)
 	pub_date = models.DateTimeField('date published',auto_now_add=True)
+	carts = models.ManyToManyField(Cart)
 	def __unicode__(self):
 		return self.name
 
@@ -15,6 +24,7 @@ class Catagories(models.Model):
 	ctg = models.CharField(max_length=200)
 	def __unicode__(self):
 		return self.ctg
+
 
 
 
@@ -28,6 +38,7 @@ class PicForm(forms.Form):
         label='Select a file',
         help_text='max. 42 megabytes'
     )
+
 
 class ItemForm(ModelForm):
 	class Meta:

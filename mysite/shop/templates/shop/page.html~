@@ -14,6 +14,12 @@
 	<ul>
 		<li> {{ i.desc }} </li>
 		<li> {{ i.price }} </li>
+		<div class='addToCart'>
+			<ul>
+				<form method=POST action="/shop/carts/add">{% csrf_token %}<input name=itemid type=hidden value={{ i.id }}><li><u><input type=submit value="Add to Cart"></u></li></form>
+				<li><img src="/static/images/Scart.png"></li>
+			</ul>
+		</div>
 	</ul>
 	</div>
 </div>

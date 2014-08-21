@@ -14,9 +14,10 @@
 	{% if bob == True %}	
 	<a href='/shop/add'>Add Item</a>
 	{%  endif %}
-	<img src='/static/images/Scart.png' height= 50px>
+	<a href='/shop/cart/'><img src='/static/images/Scart.png' height= 50px></a>
 	{% else %}
 	<a href='/accounts/login'>login HERE</a>
+	<a href='/accounts/create'>create HERE</a>
 	{% endif %}
 	
 	</div>
@@ -31,7 +32,7 @@
 		<a href="/shop/"><li>home</li></a>
 		<a><li>catagories</li></a>
 		<a><li>price range</li></a>
-		<a><li>newest</li></a>
+		<a href="/shop/newest/"><li>newest</li></a>
 		
 	</ul>
 </div>
